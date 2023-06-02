@@ -1,0 +1,458 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:wght@300;400;900&family=PT+Sans&family=Secular+One&display=swap');
+
+/* 
+font-family: 'Fira Sans Condensed', sans-serif; Заголовки (300-400-900)
+font-family: 'PT Sans', sans-serif;                Основной (400)
+font-family: 'Secular One', sans-serif;            Логотип (400)
+*/
+
+
+body {
+    font-family: 'PT Sans', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: white;
+}
+
+.container {
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
+
+/* ===========================================universal classes================================================== */
+
+.hov-act {
+    transition: opacity 0.2s;
+}
+
+.hov-act:hover {
+    opacity: 0.8;
+}
+.hov-act:active {
+    opacity: 0.6;
+}
+
+.slider {
+    position: relative;
+}
+
+.img-container {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    
+    filter: brightness(70%);
+}
+
+.contentImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.btn-container {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 50%;
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-50%);
+}
+
+/* ===========================================header================================================== */
+
+.header {
+    display: grid;
+    grid-template-columns: 2fr 1fr 2.8fr 0.2fr;
+    grid-template-rows: max-content;
+    grid-template-areas: '. logo nav search';
+
+    align-items: center;
+    justify-items: start;
+    padding: 20px 0;
+    overflow: hidden;
+}
+
+
+
+.header__logo {
+    grid-area: logo;
+
+    width: 108px;
+    font-family: 'Secular One', sans-serif;
+    font-size: 24px;
+    justify-self: start;
+
+    line-height: 1;
+    color: #FF4747;
+}
+
+.header__nav {
+    grid-area: nav;
+    color: rgb(11, 11, 11);
+}
+
+.header__search {
+    grid-area: search;
+}
+
+
+
+.list {
+    display: flex;
+    gap: 25px    
+}
+.list a {
+    padding: 15px;
+    transition: color 0.2s;
+    position: relative;
+    display: inline-block;
+}
+.list a:hover {
+    color: #01BCB5;
+}
+.list a:active {
+    color: #2b928f;
+}
+.list a::after {
+    content: '';
+    position: absolute;
+    left: 15px;
+    bottom: -70px;
+    width: 100%;
+    height: 100%;
+    background: #01BCB5;
+    transition: bottom 0.6s, color 0.2s;
+}
+.list a:hover::after {
+    bottom: -40px;
+}
+.list a:active::after {
+    background: #2b928f;
+}
+
+.search__icon {
+    transition: fill 0.2s;
+}
+.search__icon:hover {
+    fill:#01BCB5
+}
+.search__icon:active {
+    fill: #2b928f;
+}
+
+
+
+/* ===========================================main-grid================================================== */
+
+.main {
+    display: grid;
+    grid-template-rows: 2.8fr 1fr 2.8fr;
+    grid-template-columns: 2fr 1fr 1.3fr 1.7fr;
+    grid-template-areas: "slider__arrows healthy thirsty thirsty"
+                         "slider__arrows healthy slider__dots slider__orange"
+                         "freshy healthy slider__dots slider__orange";
+}
+
+.slider__arrows {
+    grid-area: slider__arrows;
+}
+
+
+.healthy {
+    grid-area: healthy;
+    background: #FF4747;
+    flex-direction: column-reverse;
+}
+.healthy .pointBox__text {
+    margin-right: 0;
+}
+.healthy .pointBox__title {
+    margin-left: 0;
+    margin-bottom: 32px;
+}
+
+
+.thirsty {
+    grid-area: thirsty;
+    background: #FFB548;
+    flex-direction: row-reverse;
+}
+.thirsty .pointBox__text {
+    margin-left: 60px;
+}
+.thirsty .pointBox__title {
+    margin-right: 60px;
+}
+
+
+
+
+
+.slider__dots {
+    grid-area: slider__dots;
+}
+.slider__orange {
+    grid-area: slider__orange;
+}
+.freshy {
+    grid-area: freshy;
+    background: #C4E86C;
+}
+
+
+
+
+/* ===========================================main-arrows================================================== */
+
+
+
+.arrows__btn-container {
+    justify-content: space-around;
+}
+
+.arrow {
+    position: relative;
+    font-size: 32px;
+    padding: 0 12px;
+}
+.arrow::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    border: 1.5px solid white;
+    border-radius: 50%;
+    right: 0;
+    bottom: 0;
+}
+.btn {
+    position: relative;
+
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 14px;
+    font-weight: 800;
+    padding: 10px 20px;
+}
+.btn::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    border: 1.5px solid white;
+    right: 0;
+    bottom: 0;
+}
+
+
+
+/* ===========================================main-dots================================================== */
+
+
+
+.dotsBox {
+    position: absolute;
+    bottom: 4%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 48px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+
+    border-radius: 50%;
+    border: 1px solid white;
+}
+.dot.active {
+    background: #ffffff;
+}
+.dot:hover {
+    background: #ffffff;
+}
+
+
+
+/* ===========================================main-orange================================================== */
+
+.orange__arrow-box {
+    position: absolute;
+    bottom: 4%;
+    right: 5%;
+    transform: translateX(-50%);
+}
+
+
+
+
+/* ===========================================main-pointBox================================================== */
+
+
+.pointBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+}
+
+
+.pointBox__title {
+    width: 100px;
+    margin-left: 32px;
+    font-family: 'Fira Sans Condensed', sans-serif;
+    font-size: 20px;
+    line-height: 1;
+    font-weight: 300;
+}
+
+.title__key {
+    font-size: 54px;
+    font-weight: 400;
+    line-height: 0.9;
+}
+
+.title__key-bold {
+    font-weight: 900;
+}
+
+.pointBox__text {
+    width: 60%;
+    margin-right: 32px;
+    padding: 20px 14px;
+}
+
+
+/* ===========================================footerPlace================================================== */
+
+.footerPlace {
+    display: grid;
+    grid-template-columns: 4.3fr 1.7fr;
+    grid-template-rows: 400px;
+    grid-template-areas: "footer juisy";
+}
+
+.footer {
+    grid-area: footer;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1.3fr;
+    grid-template-rows: 100%;
+    grid-template-areas: "socialBox submitBox finalBox";
+    background: #2F2F2F;
+}
+
+.socialBox {
+    grid-area: socialBox;
+    position: relative;
+}
+.socialBox ul {
+    width: 200px;
+
+    display: flex;
+    justify-content: space-between;
+
+    position: absolute;
+    bottom: 34%;
+    right: 20%;
+}
+
+.link {
+    position: relative;
+}
+
+.link::after {
+    content: "";
+    display: block;
+    width: 40px;
+    height: 40px;
+    border: 2px solid white;
+    border-radius: 50%;
+    
+    position: absolute;
+    top: -48%;
+    left: -34%;
+}
+
+
+
+
+.submitBox {
+    grid-area: submitBox;
+
+    position: relative;
+}
+
+.submitBox__content {
+    position: absolute;
+    bottom: 32%;
+
+    width: 100%;
+}
+
+.submitBox__text {
+    font-size: 20px;
+    line-height: 1;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+.submitForm {
+    width: 100%;
+
+    display: flex;
+    font-size: 12px;
+
+    margin-top: 20px;
+}
+.form__text {
+    width: 72%;
+
+    padding: 10px 14px;
+}
+.form__btn {
+    width: 28%;
+    padding: 10px;
+
+    color: white;
+    text-transform: uppercase;
+    background: #01BCB5;
+}
+
+
+
+.finalBox {
+    grid-area: finalBox;
+    position: relative;
+}
+
+.finalBox__logo {
+    width: 12%;
+
+    position: absolute;
+    bottom: 30%;
+    right: 26%;
+}
+.finalBox__underline {
+    font-size: 12px;
+    color: #8b8b8b;
+
+    position: absolute;
+    bottom: 8%;
+    right: 12%;
+}
+
+
+
+.juicy {
+    grid-area: juisy;
+    background: #01BCB5;
+}
