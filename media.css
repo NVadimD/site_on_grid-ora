@@ -61,6 +61,19 @@
 
 @media (width < 768px) {
 
+    .header {
+        display: grid;
+
+        grid-template-columns: 1fr 3.5fr 0.5fr ;
+        grid-template-rows: max-content;
+        grid-template-areas: 'logo nav search';
+    }
+
+
+    .header__nav {
+        display: none;
+    }
+
     .main {
         display: grid;
         grid-template-rows: 1fr 2.5fr 1fr 2.5fr 1fr 2.5fr;
@@ -101,14 +114,7 @@
                              "footer";
     }    
 
-    /* .footer {
-        grid-area: footer;
-        display: grid;
-        grid-template-columns: 2fr 2fr 1.5fr;
-        grid-template-rows: 100%;
-        grid-template-areas: "socialBox submitBox finalBox";
-        background: #2F2F2F;
-    } */
+
     .footer {
         grid-area: footer;
         display: grid;
@@ -137,6 +143,10 @@
         bottom: 60%;
         right: 5%;    
         width: 80%; 
+    }
+
+    .navOpenDesk {
+        display: flex;
     }
 
 }

@@ -91,7 +91,27 @@ body {
 
     line-height: 1;
     color: #FF4747;
+
+    position: relative;
 }
+
+
+.navOpenDesk {
+    position: absolute;
+    left: 150px;
+    display: none;
+    gap: 10px;
+}
+
+/* .menuWord {
+    color: rgb(11, 11, 11);
+    text-transform: uppercase;
+} */
+
+
+
+
+
 
 .header__nav {
     grid-area: nav;
