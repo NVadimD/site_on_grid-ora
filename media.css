@@ -1,0 +1,176 @@
+@media (width < 1200px) {
+
+
+    .header {
+        display: grid;
+        /* grid-template-columns: 2fr 1fr 2.8fr 0.2fr; */
+        grid-template-columns: 1fr 3.8fr 0.2fr ;
+        grid-template-rows: max-content;
+        grid-template-areas: 'logo nav search';
+    
+        align-items: center;
+        justify-items: start;
+        padding: 20px 0;
+        overflow: hidden;
+    }
+    
+    .header__logo {    
+        margin-left: 14%;
+    }
+
+
+
+    .main {
+        display: grid;
+        grid-template-rows: 2.8fr 1fr 2.8fr 2.8fr 1fr 2.8fr;
+        grid-template-columns: 13fr 7fr 10fr;
+        grid-template-areas: "slider__arrows slider__arrows healthy"
+                             "slider__arrows slider__arrows healthy"
+                             "freshy freshy healthy"
+                             "thirsty thirsty thirsty"
+                             "slider__dots slider__orange slider__orange"
+                             "slider__dots slider__orange slider__orange";
+    }
+
+
+    .footerPlace {
+        display: grid;
+        /* grid-template-columns: 4.3fr 1.7fr;
+        grid-template-rows: 400px; */
+        grid-template-columns: 100%;
+        grid-template-rows: 374px 374px;
+        grid-template-areas: "juisy" 
+                             "footer";
+    }    
+
+    .footer {
+        grid-area: footer;
+        display: grid;
+        grid-template-columns: 2fr 2fr 1.5fr;
+        grid-template-rows: 100%;
+        grid-template-areas: "socialBox submitBox finalBox";
+        background: #2F2F2F;
+    }
+
+}
+
+
+
+
+
+
+@media (width < 768px) {
+
+    .main {
+        display: grid;
+        grid-template-rows: 1fr 2.5fr 1fr 2.5fr 1fr 2.5fr;
+        grid-template-columns: 100%;
+        grid-template-areas: "healthy"
+                             "slider__arrows"
+                             "freshy"
+                             "slider__dots"
+                             "thirsty"
+                             "slider__orange";
+    }
+
+    .healthy {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: center;
+        align-items: center;
+        gap: 18px;
+    }
+    .thirsty .pointBox__title {
+        margin-right: 10px;
+    }
+    .thirsty .pointBox__text {
+        margin-left: 10px;
+        margin-right: 0px;
+    }
+    .thirsty.pointBox {
+        gap: 1px;
+    }
+    
+
+
+    .footerPlace {
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 374px 374px;
+        grid-template-areas: "juisy" 
+                             "footer";
+    }    
+
+    /* .footer {
+        grid-area: footer;
+        display: grid;
+        grid-template-columns: 2fr 2fr 1.5fr;
+        grid-template-rows: 100%;
+        grid-template-areas: "socialBox submitBox finalBox";
+        background: #2F2F2F;
+    } */
+    .footer {
+        grid-area: footer;
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        grid-template-rows: 1fr 2fr;
+        grid-template-areas: "socialBox finalBox"
+                             "submitBox finalBox"
+    }
+
+
+
+    .socialBox ul {
+        width: 180px;    
+        position: absolute;
+        bottom: 34%;
+        right: 20%;
+    }
+
+    .submitBox {
+        grid-area: submitBox;    
+        position: relative;
+    }
+    
+    .submitBox__content {
+        position: absolute;
+        bottom: 60%;
+        right: 5%;    
+        width: 80%; 
+    }
+
+}
+
+
+
+
+
+@media (width < 480px) {
+
+    .main {
+        display: grid;
+        grid-template-rows: 1fr 2fr 1fr 2fr 1fr 2fr;
+        grid-template-columns: 100%;
+        grid-template-areas: "healthy"
+                             "slider__arrows"
+                             "freshy"
+                             "slider__dots"
+                             "thirsty"
+                             "slider__orange";
+    }
+}
+
+    @media (width < 458px) {
+
+        .main {
+            display: grid;
+            grid-template-rows: 1fr 1.5fr 1fr 1.5fr 1fr 1.5fr;
+            grid-template-columns: 100%;
+            grid-template-areas: "healthy"
+                                 "slider__arrows"
+                                 "freshy"
+                                 "slider__dots"
+                                 "thirsty"
+                                 "slider__orange";
+        }
+}
